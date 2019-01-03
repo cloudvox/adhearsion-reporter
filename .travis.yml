@@ -1,16 +1,15 @@
 language: ruby
 rvm:
-  - 1.9.2
-  - 1.9.3
-  - 2.0.0
-  - 2.1.0
-  - jruby-19mode
-  - rbx-19mode
+  - 2.3.7
+  - 2.4.4
+  - 2.5.3
+  - jruby-9.1.17.0
+  - jruby-9.2.5.0
   - ruby-head
+jdk:
+  - openjdk8 # for jruby
 matrix:
   allow_failures:
-    - rvm: 1.9.2
     - rvm: ruby-head
-    - rvm: rbx-19mode
 notifications:
   irc: "irc.freenode.org#adhearsion"
