@@ -26,19 +26,23 @@ module Adhearsion
 
     private
       def email_subject(exception)
-        "[#{Adhearsion::Reporter.config.app_name}-#{environment}] Exception: #{exception.class} (#{exception.message})"
+        "[#{app_name}-#{environment}] Exception: #{exception.class} (#{exception.message})"
       end
 
       def exception_text(exception)
         backtrace = exception.backtrace || ["EMPTY BACKTRACE"]
-        "#{Adhearsion::Reporter.config.app_name} reported an exception at #{Time.now.to_s}" +
+        "#{app_name} reported an exception at #{Time.now.to_s}" +
         "\n\n#{exception.class} (#{exception.message}):\n" +
         backtrace.join("\n") +
         "\n\n"
       end
 
+      def app_name
+        Adhearsion::Reporter.config.app_name
+      end
+
       def environment
-        Adhearsion.config.platform.environment.to_s.upcase
+        Adhearsion.environment.to_s.upcase
       end
 
       def hostname
