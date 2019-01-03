@@ -15,7 +15,7 @@ Report Adhearsion application exceptions and deployments to:
 
 Airbrake
 Errbit
-This Adhearsion plugin requires Adhearsion 2.0 or later. For Adhearsion 1.0 try the previous version of this gem ahn_hoptoad
+This Adhearsion plugin requires Adhearsion >= 3.0.
 EOF
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
