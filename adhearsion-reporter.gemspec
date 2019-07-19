@@ -15,14 +15,14 @@ Report Adhearsion application exceptions and deployments to:
 
 Airbrake
 Errbit
-This Adhearsion plugin requires Adhearsion 2.0 or later. For Adhearsion 1.0 try the previous version of this gem ahn_hoptoad
+This Adhearsion plugin requires Adhearsion >= 3.0.
 EOF
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
 
-  s.add_runtime_dependency "adhearsion", ["~> 2.0"]
+  s.add_runtime_dependency "adhearsion", [">= 3.0.0.rc1", "< 4.0"]
   s.add_runtime_dependency "toadhopper", [">= 1.3.0"]
   s.add_runtime_dependency "newrelic_rpm", ["~> 3.6"]
   s.add_runtime_dependency "pony", ["~> 1.10"]
